@@ -20,6 +20,7 @@ class TTextTheme {
       fontSize: 16,
       fontWeight: FontWeight.bold,
       color: Colors.black,
+      
     ),
     // Title
     titleLarge: const TextStyle().copyWith(

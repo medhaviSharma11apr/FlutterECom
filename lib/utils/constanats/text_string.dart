@@ -11,7 +11,7 @@ class TText {
   //     " From Our DoorStep To Yours- Swift,Secure and Contactless Delivery! ";
 
   static const String homeAppBarTitle = "Good Day For Shopping";
-  static const String homeAppBarSubTitle = "Medhavi Midhra";
+  static const String homeAppBarSubTitle = "Medhavi";
 
 
 /// This class contains all the App Text in String formats.

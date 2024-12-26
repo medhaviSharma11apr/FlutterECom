@@ -74,9 +74,9 @@ class TSizes {
   static const double loadingIndicatorSize = 36.0;
 
   // Grid View Spacing
-  static const double gridViewSpacing  = 16.0;
+  static const double gridViewSpacing = 16.0;
 
-   static const int desktopScreenSize = 1366;
+  static const int desktopScreenSize = 1366;
   static const int tabletScreenSize = 768;
   static const int mobileScreenSize = 360;
   static const int customScreenSize = 1100;
