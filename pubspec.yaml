@@ -26,6 +26,7 @@ dependencies:
   flutter_native_splash: ^2.2.18
   smooth_page_indicator: ^1.2.0+3
   iconsax: ^0.0.8
+  carousel_slider: 
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +45,7 @@ flutter:
     - assets/
     - assets/images/content/
     - assets/images/animations/
+    - assets/images/banners/
     
     - assets/images/on_boarding_images/
     - assets/logos/
@@ -55,24 +57,24 @@ flutter:
     
     
          
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/urbanist/Urbanist-Light.ttf
-          weight: 300
-        - asset: assets/fonts/urbanist/Urbanist-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/urbanist/Urbanist-Italic.ttf
-          style: italic
-        - asset: assets/fonts/urbanist/Urbanist-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/urbanist/Urbanist-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: assets/fonts/urbanist/Urbanist-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/urbanist/Urbanist-Bold.ttf
-          weight: 800
+  # fonts:
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: assets/fonts/urbanist/Urbanist-Light.ttf
+  #         weight: 300
+  #       - asset: assets/fonts/urbanist/Urbanist-Regular.ttf
+  #         weight: 400
+  #       - asset: assets/fonts/urbanist/Urbanist-Italic.ttf
+  #         style: italic
+  #       - asset: assets/fonts/urbanist/Urbanist-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/urbanist/Urbanist-MediumItalic.ttf
+  #         weight: 500
+  #         style: italic
+  #       - asset: assets/fonts/urbanist/Urbanist-SemiBold.ttf
+  #         weight: 600
+  #       - asset: assets/fonts/urbanist/Urbanist-Bold.ttf
+  #         weight: 800
                                                                                                                 #   weight: 800
       
 

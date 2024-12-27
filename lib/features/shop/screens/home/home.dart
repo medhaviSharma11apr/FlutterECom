@@ -1,10 +1,15 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterstore/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:flutterstore/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:flutterstore/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:flutterstore/common/widgets/images/t_rounded_images.dart';
 import 'package:flutterstore/common/widgets/texts/section_heading.dart';
 import 'package:flutterstore/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:flutterstore/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
+import '../../../../utils/constanats/image_string.dart';
 import 'widgets/home_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -59,6 +64,20 @@ class HomeScreen extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+
+            // Body
+            const TPromoSlider(
+              banners: [
+                TImages.promoBanner1,
+                TImages.promoBanner2,
+                TImages.promoBanner3,
+                TImages.promoBanner4,
+                TImages.promoBanner5,
+                TImages.promoBanner6,
+                TImages.promoBanner7,
+                TImages.promoBanner8,
+              ],
             )
           ],
         ),
@@ -66,4 +85,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

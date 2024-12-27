@@ -14,9 +14,9 @@ class TImages {
   static const String onBoardingImage1 =
       "assets/images/on_boarding_images/sammy-line-searching.gif";
   static const String onBoardingImage2 =
-      "assets/images/on_boarding_images/sammy-line-shopping.png";
+      "assets/images/on_boarding_images/sammy-line-shopping.gif";
   static const String onBoardingImage3 =
-      "assets/images/on_boarding_images/sammy-line-delivery.png";
+      "assets/images/on_boarding_images/sammy-line-delivery.gif";
 
   // Animation
 
@@ -35,17 +35,33 @@ class TImages {
 
   // category
 
-  static const String sportsIcon = "assets/icons/categories/bowling-64.png";
-  static const String clothIcon = "assets/icons/categories/tailor-dummy.png";
-  static const String shoeIcon = "assets/icons/categories/shoes-64.png";
-  static const String cosmeticIcon = "assets/icons/categories/cosmetic-64.jpeg";
-  static const String animalIcon = "assets/icons/categories/dog-heart-64.png";
-  static const String toyIcon = "assets/icons/categories/wooden-toy-car-64.png";
+  static const String sportsIcon =
+      "assets/icons/categories/icons8-bowling-64.png";
+  static const String clothIcon =
+      "assets/icons/categories/icons8-school-uniform-64.png";
+  static const String shoeIcon = "assets/icons/categories/icons8-shoes-64.png";
+  static const String cosmeticIcon =
+      "assets/icons/categories/icons8-cosmetics-64.png";
+  static const String animalIcon =
+      "assets/icons/categories/icons8-dog-heart-64.png";
+  static const String toyIcon =
+      "assets/icons/categories/icons8-wooden-toy-car-50.png";
   static const String furnitureIcon =
-      "assets/icons/categories/dining-chair-64.png";
+      "assets/icons/categories/icons8-dining-chair-64.png";
 
   static const String jewelryIcon =
-      "assets/icons/categories/sparkling-diamond.png";
+      "assets/icons/categories/icons8-sparkling-diamond-64.png";
   static const String electronicIcon =
-      "assets/icons/categories/smartphone64.png";
+      "assets/icons/categories/icons8-smartphone-64.png";
+
+  // banner
+
+  static const String promoBanner1 = "assets/images/banners/banner_1.jpg";
+  static const String promoBanner2 = "assets/images/banners/banner_2.jpg";
+  static const String promoBanner3 = "assets/images/banners/banner_3.jpg";
+  static const String promoBanner4 = "assets/images/banners/banner_4.jpg";
+  static const String promoBanner5 = "assets/images/banners/banner_5.jpg";
+  static const String promoBanner6 = "assets/images/banners/banner_6.jpg";
+  static const String promoBanner7 = "assets/images/banners/banner_7.jpg";
+  static const String promoBanner8 = "assets/images/banners/banner_8.jpg";
 }
