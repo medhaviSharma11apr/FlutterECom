@@ -48,6 +48,8 @@ flutter:
     - assets/images/on_boarding_images/
     - assets/logos/
     - assets/icons/payment_methods/
+    - assets/icons/categories/
+    - assets/icons/categories/
     # - images/a_dot_burr.jpeg
   
     

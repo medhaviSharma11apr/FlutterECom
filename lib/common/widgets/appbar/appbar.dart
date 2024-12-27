@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
+import 'package:flutterstore/utils/constanats/sizes.dart';
 import 'package:flutterstore/utils/device/device_utils.dart';
 import 'package:flutterstore/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 
 class TAppBar extends StatelessWidget implements PreferredSizeWidget {
- 
   const TAppBar({
     super.key,
     this.title,
@@ -23,19 +23,28 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context); 
-    return AppBar(
-      automaticallyImplyLeading: false,
-      leading: showBackArrow
-          ? IconButton(
-              onPressed: () => Get.back(),
-              icon: Icon(Icons.arrow_left,
-                  color: dark ? TColors.white : TColors.dark))
-          : leadingIcon != null
-              ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon))
-              : null,
-      title: title,
-      actions: actions,
+    final dark = THelperFunctions.isDarkMode(context);
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: TSizes.md,
+        vertical: TSizes.sm,
+      ),
+      child: AppBar(
+        automaticallyImplyLeading: false,
+        leading: showBackArrow
+            ? IconButton(
+                onPressed: () => Get.back(),
+                icon: Icon(
+                  Icons.arrow_left,
+                  color: dark ? TColors.white : TColors.dark,
+                ))
+            : leadingIcon != null
+                ? IconButton(
+                    onPressed: leadingOnPressed, icon: Icon(leadingIcon))
+                : null,
+        title: title,
+        actions: actions,
+      ),
     );
   }
 

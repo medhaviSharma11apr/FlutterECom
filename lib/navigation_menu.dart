@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterstore/features/shop/screens/home/widgets/home.dart';
+import 'package:flutterstore/features/shop/screens/home/home.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
 import 'package:flutterstore/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';

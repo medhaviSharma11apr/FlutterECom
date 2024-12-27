@@ -32,4 +32,20 @@ class TImages {
       "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration =
       "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
+
+  // category
+
+  static const String sportsIcon = "assets/icons/categories/bowling-64.png";
+  static const String clothIcon = "assets/icons/categories/tailor-dummy.png";
+  static const String shoeIcon = "assets/icons/categories/shoes-64.png";
+  static const String cosmeticIcon = "assets/icons/categories/cosmetic-64.jpeg";
+  static const String animalIcon = "assets/icons/categories/dog-heart-64.png";
+  static const String toyIcon = "assets/icons/categories/wooden-toy-car-64.png";
+  static const String furnitureIcon =
+      "assets/icons/categories/dining-chair-64.png";
+
+  static const String jewelryIcon =
+      "assets/icons/categories/sparkling-diamond.png";
+  static const String electronicIcon =
+      "assets/icons/categories/smartphone64.png";
 }
