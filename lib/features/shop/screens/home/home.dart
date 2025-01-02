@@ -1,9 +1,8 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterstore/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:flutterstore/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:flutterstore/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:flutterstore/common/widgets/images/t_rounded_images.dart';
+import 'package:flutterstore/common/widgets/layouts/grid_layout.dart';
+import 'package:flutterstore/common/widgets/products/product_card/product_card_vertical.dart';
 import 'package:flutterstore/common/widgets/texts/section_heading.dart';
 import 'package:flutterstore/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:flutterstore/features/shop/screens/home/widgets/promo_slider.dart';
@@ -32,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   // --SearchBar--
 
-                  const TSearchContainer(
+                  TSearchContainer(
                     icon: Icons.search,
                     text: 'Search in Store',
                   ),
@@ -67,17 +66,33 @@ class HomeScreen extends StatelessWidget {
             ),
 
             // Body
-            const TPromoSlider(
-              banners: [
-                TImages.promoBanner1,
-                TImages.promoBanner2,
-                TImages.promoBanner3,
-                TImages.promoBanner4,
-                TImages.promoBanner5,
-                TImages.promoBanner6,
-                TImages.promoBanner7,
-                TImages.promoBanner8,
-              ],
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  // promo slider
+                  const TPromoSlider(
+                    banners: [
+                      TImages.promoBanner1,
+                      TImages.promoBanner2,
+                      TImages.promoBanner3,
+                      TImages.promoBanner4,
+                      TImages.promoBanner5,
+                      TImages.promoBanner6,
+                      TImages.promoBanner7,
+                      TImages.promoBanner8,
+                    ],
+                  ),
+                  // product card vertical
+
+                  GridLayout(
+                    itemCount: TImages.productImagesList.length,
+                    itemBuilder: ((p0, p1) => ProductVerticalCard(
+                          imageUrl: TImages.productImagesList[p1],
+                        )),
+                  ),
+                ],
+              ),
             )
           ],
         ),
