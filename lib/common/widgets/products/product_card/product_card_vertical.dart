@@ -5,9 +5,11 @@ import 'package:flutterstore/common/widgets/icons/circular_icon.dart';
 import 'package:flutterstore/common/widgets/images/t_rounded_images.dart';
 import 'package:flutterstore/common/widgets/products/product_card/product_price_text.dart';
 import 'package:flutterstore/common/widgets/texts/product_title_text.dart';
+import 'package:flutterstore/features/shop/screens/product_details/product_details.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
 import 'package:flutterstore/utils/helpers/helper_function.dart';
+import 'package:get/get.dart';
 
 import '../../texts/brand_title_text_with_verified_icon.dart';
 
@@ -19,7 +21,11 @@ class ProductVerticalCard extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
     //Container with side padding , color ,edges, radius and shadow,
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.to(
+          () => const ProductDetail(),
+        );
+      },
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -129,8 +135,6 @@ class ProductVerticalCard extends StatelessWidget {
                       )
                     ],
                   )
-              
-              
                 ],
               ),
             )

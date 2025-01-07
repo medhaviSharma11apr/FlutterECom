@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutterstore/navigation_menu.dart';
+// import 'package:flutterstore/app.dart';
 import 'package:flutterstore/utils/theme/theme.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'app.dart';
+
+import 'features/personalization/screens/address/addresses.dart';
 
 void main() {
   // runApp(const MyApp());
@@ -26,7 +27,7 @@ class _TestAppState extends State<TestApp> {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      home: const NavigationMenu(),
+      home: const UserAddressScreen(),
     );
   }
 }

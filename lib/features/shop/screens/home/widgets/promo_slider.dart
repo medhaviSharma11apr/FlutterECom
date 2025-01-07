@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutterstore/common/widgets/images/t_rounded_images.dart';
 import 'package:flutterstore/features/shop/controller/home_controller.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
-import 'package:flutterstore/utils/constanats/image_string.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
 import 'package:get/get.dart';
 
