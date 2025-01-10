@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutterstore/common/style/spacing_style.dart';
-import 'package:flutterstore/features/authentication/screens/login/login.dart';
-import 'package:flutterstore/utils/constanats/image_string.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
 import 'package:flutterstore/utils/constanats/text_string.dart';
 import 'package:flutterstore/utils/helpers/helper_function.dart';
-import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key});
+  const SuccessScreen(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.subtitle,
+      required this.onPressed});
+
+  final String image, title, subtitle;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -19,26 +25,29 @@ class SuccessScreen extends StatelessWidget {
           child: Column(
             children: [
               // Images
-
-              Image(
-                image: const AssetImage(TImages.staticSuccessIllustration),
-                width: THelperFunctions.screenWidth() * 0.6,
-              ),
+              Lottie.asset(image,
+                  width: MediaQuery.of(context).size.width * 0.6),
+              //
+              // Image(
+              //   image: AssetImage(image),
+              //   width: THelperFunctions.screenWidth() * 0.6,
+              // ),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
               // Title and SubTitle
+              //
               Text(
-                TText.yourAccountCreatedTitle,
+                title,
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
-
+              //   PP
               Text(
-                TText.yourAccountCreatedSubTitle,
+                subtitle,
                 style: Theme.of(context).textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
@@ -50,10 +59,7 @@ class SuccessScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: (() {
-                      Get.to(() => const LoginScreen());
-                    }),
-                    child: const Text(TText.tContinue)),
+                    onPressed: onPressed, child: const Text(TText.tContinue)),
               )
             ],
           ),

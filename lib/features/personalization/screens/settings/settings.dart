@@ -5,6 +5,7 @@ import 'package:flutterstore/common/widgets/list_tile/setting_menu_tile.dart';
 import 'package:flutterstore/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:flutterstore/common/widgets/texts/section_heading.dart';
 import 'package:flutterstore/features/personalization/screens/address/addresses.dart';
+import 'package:flutterstore/features/shop/screens/orders/orders.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
 import 'package:flutterstore/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
@@ -70,10 +71,11 @@ class SettingScreen extends StatelessWidget {
                     subtitle: 'Add , remove product and move to checkout',
                   ),
 
-                  const SettingMenuTile(
+                  SettingMenuTile(
                     icon: Icons.shopify_sharp,
                     title: 'My Orders',
                     subtitle: 'In Progress and Completed Orders',
+                    onTap: () => Get.to(const OrderScreen()),
                   ),
 
                   const SettingMenuTile(

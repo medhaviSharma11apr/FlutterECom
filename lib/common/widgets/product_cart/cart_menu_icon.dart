@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstore/features/shop/screens/cart/cart.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
+import 'package:get/get.dart';
 
 class TCartCounterIcon extends StatelessWidget {
   const TCartCounterIcon({
@@ -16,7 +18,7 @@ class TCartCounterIcon extends StatelessWidget {
     return Stack(
       children: [
         IconButton(
-            onPressed: (() => onPressed),
+            onPressed: (() => Get.to(() => const CartScreen())),
             icon: Icon(
               Icons.shopify,
               size: 34,

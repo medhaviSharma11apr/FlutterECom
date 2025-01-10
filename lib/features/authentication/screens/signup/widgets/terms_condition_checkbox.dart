@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstore/features/authentication/controller/signup/signup_contoller.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
 import 'package:flutterstore/utils/constanats/text_string.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 
 class TermsAndCondition extends StatelessWidget {
   const TermsAndCondition({
@@ -13,16 +15,20 @@ class TermsAndCondition extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = SignupController.instance;
     return Row(
       children: [
-        SizedBox(
-          height: 24,
-          width: 24,
-          child: Checkbox(
-            value: true,
-            onChanged: ((value) {}),
-          ),
-        ),
+        Obx((() => SizedBox(
+              height: 24,
+              width: 24,
+              child: Checkbox(
+                value: controller.privacyPolicy.value,
+                onChanged: ((value) {
+                  controller.privacyPolicy.value =
+                      !controller.privacyPolicy.value;
+                }),
+              ),
+            ))),
         const SizedBox(
           width: TSizes.spaceBtwItems,
         ),

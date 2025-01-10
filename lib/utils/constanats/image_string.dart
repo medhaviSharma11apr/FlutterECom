@@ -19,7 +19,10 @@ class TImages {
       "assets/images/on_boarding_images/sammy-line-delivery.gif";
 
   // Animation
-
+  static const String docer =
+      "assets/images/animations/141594-animation-of-docer.json";
+  // "assets/images/animations/72462-check-register.json";
+  // "assets/images/animations/loader-animation.json";
   static const String productsIllustration =
       "assets/images/animations/sammy-line-workout.gif";
   static const String salesIllustration =
@@ -32,6 +35,9 @@ class TImages {
       "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration =
       "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
+
+  static const String sucessfulRegistrationAnimation =
+      "assets/images/animations/72462-check-register.json";
 
   // category
 

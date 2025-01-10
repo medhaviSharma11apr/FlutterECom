@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "773229696125",
+    "project_id": "ecommerceapp-46a27",
+    "storage_bucket": "ecommerceapp-46a27.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773229696125:android:dce150ce3876117b5f4d14",
+        "android_client_info": {
+          "package_name": "com.example.flutterstore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEYZo1k4ltHnk2pAscacRU7sz1jJIbO7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

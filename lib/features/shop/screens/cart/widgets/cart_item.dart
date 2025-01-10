@@ -22,7 +22,7 @@ class CartItems extends StatelessWidget {
           height: TSizes.spaceBtwSections,
         );
       }),
-      itemCount: 10,
+      itemCount: 4,
       itemBuilder: ((context, index) {
         return Column(
           children: [

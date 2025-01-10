@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterstore/common/widgets/image_text_widgets/vertical_image_text.dart';
+import 'package:flutterstore/features/shop/screens/sub_category/sub_category.dart';
 import 'package:flutterstore/utils/constanats/image_string.dart';
+import 'package:get/get.dart';
 
 import '../../../../../utils/constanats/colors.dart';
 
@@ -45,7 +47,7 @@ class THomeCategories extends StatelessWidget {
             title: nameList[index],
             textColor: TColors.white,
             backgroundColor: TColors.white,
-            onTap: () {},
+            onTap: () => Get.to(() => const SubCategoryScreen()),
           );
         },
       ),

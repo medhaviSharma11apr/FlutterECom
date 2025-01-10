@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterstore/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:flutterstore/bindings/general_binding.dart';
+import 'package:flutterstore/utils/constanats/colors.dart';
 import 'package:flutterstore/utils/theme/theme.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +17,18 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      theme:     TAppTheme.lightTheme,
+      theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      home:const OnBoardingScreen(),
+      initialBinding: GeneralBinding(),
+      // SHOW LOADER MEANWHILE AUTHENTICATION REPO IS DECIDING WHICH SCREEN TO SHOW
+      home: const Scaffold(
+        backgroundColor: TColors.primaryColor,
+        body: Center(
+          child: CircularProgressIndicator(
+            color: TColors.white,
+          ),
+        ),
+      ),
     );
   }
 }

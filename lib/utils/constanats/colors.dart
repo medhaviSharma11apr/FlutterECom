@@ -37,7 +37,7 @@ class TColors {
 
   // Natural Color
 
-  static const Color black = Color(0xFF1976D2);
+  static const Color black = Colors.black;
   static const Color darkerGrey = Color(0xFF4F4F4f);
   static const Color darkGrey = Color(0xFF939393);
   static const Color grey = Color(0xFFE0E0E0);

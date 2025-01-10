@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterstore/common/widgets/appbar/appbar.dart';
+import 'package:flutterstore/features/shop/screens/checkout/checkout.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
+import 'package:get/get.dart';
 
 import 'widgets/cart_item.dart';
 
@@ -27,7 +29,9 @@ class CartScreen extends StatelessWidget {
         padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: ElevatedButton(
           child: const Text('Checkout: \$234'),
-          onPressed: () {},
+          onPressed: () {
+            Get.to(() => CheckOutScreen());
+          },
         ),
       ),
     );
