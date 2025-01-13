@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 class AnimationLoaderWidget extends StatelessWidget {
   const AnimationLoaderWidget(
@@ -25,8 +24,9 @@ class AnimationLoaderWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Lottie.asset(animation,
-              width: MediaQuery.of(context).size.width * 0.8),
+          Text(animation),
+          // Lottie.asset(animation,
+          //     width: MediaQuery.of(context).size.width * 0.8),
           const SizedBox(
             height: TSizes.defaultSpace,
           ),
@@ -59,8 +59,7 @@ class AnimationLoaderWidget extends StatelessWidget {
     );
   }
 
-
-    static successSnackBar({required title, message = '', duration = 3}) {
+  static successSnackBar({required title, message = '', duration = 3}) {
     Get.snackbar(
       title,
       message,

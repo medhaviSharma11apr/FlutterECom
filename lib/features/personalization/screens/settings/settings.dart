@@ -4,6 +4,7 @@ import 'package:flutterstore/common/widgets/custom_shapes/containers/primary_hea
 import 'package:flutterstore/common/widgets/list_tile/setting_menu_tile.dart';
 import 'package:flutterstore/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:flutterstore/common/widgets/texts/section_heading.dart';
+import 'package:flutterstore/data/repositories/auth/auth_repositories.dart';
 import 'package:flutterstore/features/personalization/screens/address/addresses.dart';
 import 'package:flutterstore/features/shop/screens/orders/orders.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
@@ -142,7 +143,9 @@ class SettingScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        AuthenticationRepository.instance.logout();
+                      },
                       child: const Text('Log Out'),
                     ),
                   ),

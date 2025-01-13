@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutterstore/features/authentication/controller/login/login_controller.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
 import 'package:flutterstore/utils/constanats/image_string.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
+import 'package:get/get.dart';
 
 class TSocialButton extends StatelessWidget {
   const TSocialButton({
@@ -10,6 +14,7 @@ class TSocialButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -19,7 +24,10 @@ class TSocialButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(100),
           ),
           child: IconButton(
-              onPressed: (() {}),
+              onPressed: (() {
+                log('lodehv');
+                controller.googleSignIn();
+              }),
               icon: const Image(
                   width: TSizes.iconMd,
                   height: TSizes.iconMd,

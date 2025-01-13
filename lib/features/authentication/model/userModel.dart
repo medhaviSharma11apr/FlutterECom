@@ -24,10 +24,10 @@ class UserModel {
   String get formattedPhoneNumber => TFormatter.formatPhoneNumber(phoneNumber);
 
   /// static function to split user
-  static List<String> namePart(fullName) => fullName.split(" ");
+  static List<String> namePart(fullName) => fullName.toString().split(" ");
 
   static String generateUserName(fullName) {
-    List<String> namePart = fullName.split();
+    List<String> namePart = fullName.toString().split(" ");
     String firstName = namePart[0].trim();
     String lastName =
         namePart.length > 1 ? namePart[1].trim().toLowerCase() : "";
