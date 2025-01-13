@@ -1,12 +1,14 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterstore/features/authentication/controller/forget_password/forget_password_controller.dart';
 import 'package:flutterstore/features/authentication/screens/login/login.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
 import 'package:flutterstore/utils/constanats/text_string.dart';
 import 'package:flutterstore/utils/helpers/helper_function.dart';
 import 'package:get/get.dart';
 import '../../../../utils/constanats/image_string.dart';
+import '../../controller/forget_password/forget_password_controller.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key, required this.email});
@@ -85,7 +87,9 @@ class ResetPassword extends StatelessWidget {
                 width: double.infinity,
                 child: TextButton(
                   onPressed: (() {
-                    // ForgetPasswordController.instance .resendPasswordResetEmail(email);
+                    log('here');
+                    ForgetPasswordController.instance
+                        .resendPasswordResetEmail(email);
                     // Get.to(() => const LoginScreen());
                   }),
                   child: const Text(

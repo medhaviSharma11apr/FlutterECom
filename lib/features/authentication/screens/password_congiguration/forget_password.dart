@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutterstore/features/authentication/controller/forget_password/forget_password_controller.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
@@ -64,7 +66,8 @@ class ForgetPassword extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.off(() => controller.sendPasswordResetEmail());
+                  log('hererw');
+                  controller.sendPasswordResetEmail();
                 },
                 child: const Text(TText.submit),
               ),
