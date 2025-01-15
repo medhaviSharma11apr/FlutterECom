@@ -50,8 +50,8 @@ class UpdateNameController extends GetxController {
       log('4');
       // Update User's first a nd lats nAME IN FIREBAE
       Map<String, dynamic> name = {
-        "FirstName": firstName.text.trim(),
-        "LirstName": lastName.text.trim(),
+        "firstName": firstName.text.trim(),
+        "lastName": lastName.text.trim(),
       };
       log('5');
       await userRepository.updateSingleField(name);

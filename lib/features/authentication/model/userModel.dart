@@ -12,8 +12,8 @@ class UserModel {
     required this.id,
   });
   final String id;
-  late final String firstName;
-  late final String lastName;
+  String firstName;
+  String lastName;
   final String userName;
   final String email;
   final String phoneNumber;
@@ -65,12 +65,12 @@ class UserModel {
     if (document.data() != null) {
       final data = document.data();
       return UserModel(
-        firstName: data!['firstName']?? '',
-        lastName: data['lastName']??'',
-        userName: data['userName']?? '',
-        email: data['email']?? '',
-        phoneNumber: data['phoneNumber']??'',
-        profilePicture: data['profilePicture']??'',
+        firstName: data!['firstName'] ?? '',
+        lastName: data['lastName'] ?? '',
+        userName: data['userName'] ?? '',
+        email: data['email'] ?? '',
+        phoneNumber: data['phoneNumber'] ?? '',
+        profilePicture: data['profilePicture'] ?? '',
         id: document.id,
       );
     } else {

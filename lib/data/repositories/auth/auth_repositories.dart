@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutterstore/data/repositories/user/user_repo.dart';
 import 'package:flutterstore/features/authentication/screens/login/login.dart';
 import 'package:flutterstore/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:flutterstore/features/authentication/screens/signup/verify_email.dart';
@@ -174,11 +175,54 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+  // Delete Account
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance.removeUserRecord(_auth.currentUser!.uid);
+      await _auth.currentUser!.delete();
+    } on FirebaseAuthException catch (e) {
+      throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
+    } on FirebaseException catch (e) {
+      throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
+    } on FormatException catch (e) {
+      throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
+    } on PlatformException catch (e) {
+      throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
+    } catch (e) {
+      throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
+    }
+  }
+
   // logout
   Future<void> logout() async {
     try {
       await FirebaseAuth.instance.signOut();
       Get.offAll(() => const LoginScreen());
+    } on FirebaseAuthException catch (e) {
+      throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
+    } on FirebaseException catch (e) {
+      throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
+    } on FormatException catch (e) {
+      throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
+    } on PlatformException catch (e) {
+      throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
+    } catch (e) {
+      throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
+    }
+  }
+
+  // ReAuthenticate User
+
+  Future<void> reAuthenticateUsingEmailAndPassword(
+      String email, String password) async {
+    try {
+      // create a credential
+      AuthCredential credential =
+          EmailAuthProvider.credential(email: email, password: password);
+
+      // ReAuthenticate
+
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
     } on FirebaseAuthException catch (e) {
       throw AnimationLoaderWidget.errorSnackBar(title: e.toString());
     } on FirebaseException catch (e) {
