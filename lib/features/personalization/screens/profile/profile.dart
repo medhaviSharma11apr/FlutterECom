@@ -2,16 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutterstore/common/widgets/appbar/appbar.dart';
 import 'package:flutterstore/common/widgets/images/t_circular_image.dart';
 import 'package:flutterstore/common/widgets/texts/section_heading.dart';
+import 'package:flutterstore/features/personalization/controller/user_controller.dart';
 import 'package:flutterstore/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:flutterstore/utils/constanats/image_string.dart';
 import 'package:flutterstore/utils/constanats/sizes.dart';
 import 'package:flutterstore/utils/helpers/helper_function.dart';
+import 'package:get/get.dart';
+
+import 'widgets/change_name.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     bool dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       /// -- AppBar
@@ -61,12 +66,14 @@ class ProfileScreen extends StatelessWidget {
               // Row
 
               ProfileMenu(
-                value: 'Medhavi D',
-                onPressed: () {},
+                value: controller.userModel.value.fullName,
+                onPressed: () {
+                  Get.to(() => ChangeName());
+                },
                 title: 'Name',
               ),
               ProfileMenu(
-                value: 'medhaviSharma11apr',
+                value: controller.userModel.value.email,
                 onPressed: () {},
                 title: 'User Name',
               ),
@@ -90,23 +97,23 @@ class ProfileScreen extends StatelessWidget {
               ),
               // moreInfo
               ProfileMenu(
-                value: 'medhaviSharma11apr',
+                value: controller.userModel.value.userName,
                 onPressed: () {},
                 title: 'User Name',
               ),
               ProfileMenu(
-                value: '45689',
+                value: controller.userModel.value.id,
                 onPressed: () {},
                 title: 'User Id',
                 icon: Icons.copy,
               ),
               ProfileMenu(
-                value: 'medhaviSharma11apr@gmail.com',
+                value: controller.userModel.value.email,
                 onPressed: () {},
                 title: 'Email',
               ),
               ProfileMenu(
-                value: '+91-9910154572',
+                value: controller.userModel.value.phoneNumber,
                 onPressed: () {},
                 title: 'Phone Number',
               ),

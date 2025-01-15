@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterstore/utils/formatters/formatter.dart';
 
 class UserModel {
@@ -11,8 +12,8 @@ class UserModel {
     required this.id,
   });
   final String id;
-  final String firstName;
-  final String lastName;
+  late final String firstName;
+  late final String lastName;
   final String userName;
   final String email;
   final String phoneNumber;
@@ -57,5 +58,23 @@ class UserModel {
       'profilePicture': profilePicture,
       'id': id
     };
+  }
+
+  factory UserModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data();
+      return UserModel(
+        firstName: data!['firstName']?? '',
+        lastName: data['lastName']??'',
+        userName: data['userName']?? '',
+        email: data['email']?? '',
+        phoneNumber: data['phoneNumber']??'',
+        profilePicture: data['profilePicture']??'',
+        id: document.id,
+      );
+    } else {
+      return UserModel.empty();
+    }
   }
 }

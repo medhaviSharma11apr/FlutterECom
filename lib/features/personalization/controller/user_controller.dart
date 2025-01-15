@@ -6,9 +6,30 @@ import 'package:get/get.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find();
-  final userRepository = Get.put(UserRepository());
+  // final userRepository = Get.put(UserRepository());
+  var userRepository = Get.put(UserRepository());
+  Rx<UserModel> userModel = UserModel.empty().obs;
+  final profileLoading = false.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    fetchUserRecord();
+  }
 
   // save user record from any regisration provider
+
+  Future<void> fetchUserRecord() async {
+    profileLoading.value = true;
+    try {
+      final user = await userRepository.fetchUserDetail();
+      userModel(user);
+    } catch (e) {
+      userModel(UserModel.empty());
+    } finally {
+      profileLoading.value = false;
+    }
+  }
 
   Future<void> saveUserRecord(UserCredential userCredential) async {
     try {

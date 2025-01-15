@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterstore/common/widgets/images/t_circular_image.dart';
+import 'package:flutterstore/features/personalization/controller/user_controller.dart';
 import 'package:flutterstore/features/personalization/screens/profile/profile.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
 import 'package:flutterstore/utils/constanats/image_string.dart';
@@ -15,6 +16,7 @@ class UserProfileTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return ListTile(
       leading: CircularImage(
         dark: dark,
@@ -24,12 +26,12 @@ class UserProfileTile extends StatelessWidget {
         padding: 0,
       ),
       title: Text(
-        'Medhavi D',
+        controller.userModel.value.fullName,
         style: Theme.of(context).textTheme.headlineSmall!.apply(
               color: TColors.white,
             ),
       ),
-      subtitle: Text('medhaviSharma11apr@gmail.com',
+      subtitle: Text(controller.userModel.value.email,
           style: Theme.of(context).textTheme.bodyMedium!.apply(
                 color: Colors.white,
               )),

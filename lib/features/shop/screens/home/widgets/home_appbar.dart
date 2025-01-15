@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutterstore/common/widgets/appbar/appbar.dart';
 import 'package:flutterstore/common/widgets/product_cart/cart_menu_icon.dart';
-import 'package:flutterstore/features/shop/screens/cart/cart.dart';
+import 'package:flutterstore/features/personalization/controller/user_controller.dart';
 import 'package:flutterstore/utils/constanats/colors.dart';
 import 'package:flutterstore/utils/constanats/text_string.dart';
+import 'package:flutterstore/utils/popups/shimmer.dart';
 import 'package:get/get.dart';
 
 class THomeAppBar extends StatelessWidget {
@@ -13,6 +14,7 @@ class THomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
     return TAppBar(
       title: Column(
         children: [
@@ -23,19 +25,26 @@ class THomeAppBar extends StatelessWidget {
                 .labelMedium!
                 .apply(color: TColors.grey),
           ),
-          Text(
-            TText.homeAppBarSubTitle,
-            style: Theme.of(context).textTheme.labelSmall!.apply(
-                  color: TColors.white,
-                ),
-          ),
+          Obx((() {
+            if (!controller.profileLoading.value) {
+              return Text(
+                controller.userModel.value.fullName,
+                style: Theme.of(context).textTheme.headlineSmall!.apply(
+                      color: TColors.white,
+                    ),
+              );
+            } else {
+              return const CustomShimmer(
+                width: 80,
+                height: 15,
+              );
+            }
+          })),
         ],
       ),
       actions: [
         TCartCounterIcon(
-          onPressed: (() {
-          
-          }),
+          onPressed: (() {}),
           iconColor: TColors.white,
         )
       ],
